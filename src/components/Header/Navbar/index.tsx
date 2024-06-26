@@ -6,7 +6,7 @@ import {
   TIMELINE_ROUTE,
 } from '@constants/routes'
 import { FC } from 'react'
-import { ThemeSwitcher } from './ThemeSwitcher'
+import { ThemeSwitcher } from '../ThemeSwitcher'
 import {
   NavbarContainer,
   NavbarLink,
