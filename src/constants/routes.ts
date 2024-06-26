@@ -1,6 +1,11 @@
+export const HOME_ROUTE = '/'
+export const TIMELINE_ROUTE = '/timeline'
+export const BANK_CARD_ROUTE = '/bank-card'
+export const CONTACT_ROUTE = '/contact'
+
 export const routes = [
-  { path: '/', Page: 'home' },
-  { path: '/timeline', Page: 'timeline' },
-  { path: '/bank-card', Page: 'bank-card' },
-  { path: '/contato', Page: 'contato' },
+  { path: HOME_ROUTE, Page: 'home' },
+  { path: TIMELINE_ROUTE, Page: 'timeline' },
+  { path: BANK_CARD_ROUTE, Page: 'bank-card' },
+  { path: CONTACT_ROUTE, Page: 'contact' },
 ]
