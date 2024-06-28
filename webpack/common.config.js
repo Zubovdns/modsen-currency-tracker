@@ -14,6 +14,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       '@src': path.resolve(__dirname, '../src'),
+      '@pages': path.resolve(__dirname, '../src/pages'),
       '@components': path.resolve(__dirname, '../src/components'),
       '@constants': path.resolve(__dirname, '../src/constants'),
       '@hooks': path.resolve(__dirname, '../src/hooks'),
@@ -21,7 +22,6 @@ module.exports = {
       '@assets': path.resolve(__dirname, '../src/assets'),
       '@store': path.resolve(__dirname, '../src/store'),
       '@types': path.resolve(__dirname, '../src/types'),
-      '@pages': path.resolve(__dirname, '../src/pages'),
     },
   },
   module: {
