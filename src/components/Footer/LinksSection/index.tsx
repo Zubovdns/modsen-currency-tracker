@@ -1,5 +1,5 @@
 import linksArrow from '@assets/icons/linksArrow.svg'
-import useWindowSize from '@hooks/useWindowSize'
+import { useWindowSize } from '@hooks/useWindowSize'
 import { FC } from 'react'
 import { menuData } from './config'
 import {

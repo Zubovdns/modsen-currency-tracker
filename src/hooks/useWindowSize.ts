@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 const MOBILE_WINDOW_SIZE: number = 768
 
-const useWindowSize = (): boolean => {
+export const useWindowSize = () => {
   const [isMobile, setIsMobile] = useState<boolean>(
     window.innerWidth <= MOBILE_WINDOW_SIZE
   )
@@ -21,5 +21,3 @@ const useWindowSize = (): boolean => {
 
   return isMobile
 }
-
-export default useWindowSize
