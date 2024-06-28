@@ -35,7 +35,21 @@
     ],
     "no-nested-ternary": 1,
     "eqeqeq": 2,
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^\\u0000"],
+          ["^react", "^@?\\w"],
+          ["^(@|components|utils|hooks|config|vendored-lib)(/.*|$)"],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          ["^.+\\.s?css$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error"
   },
   "settings": {
     "react": {

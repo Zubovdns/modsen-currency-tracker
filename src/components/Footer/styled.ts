@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  //height: auto;
   padding-top: 5vw;
 
   display: flex;
