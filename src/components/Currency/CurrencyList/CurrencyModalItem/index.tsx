@@ -1,7 +1,7 @@
-import { CACHE_TIMEOUT } from '@constants/currencyApi'
 import { useAppDispatch, useAppSelector } from '@store/hooks/hooks'
 import { currencies } from '@store/selectors/currenciesSelectors'
 import { fetchCurrencies } from '@store/thunks/fetchCurrencies'
+import { checkCacheExpiration } from '@utils/checkCacheExpiration'
 import { FC, useEffect, useState } from 'react'
 import { currencyImages, mainCurrency } from '../constants'
 import {
@@ -26,11 +26,7 @@ export const CurrencyModalItem: FC<ModalItemProps> = ({ code }) => {
   }
 
   useEffect(() => {
-    if (
-      !data ||
-      new Date().getTime() - new Date(data.meta.last_updated_at).getTime() >
-        CACHE_TIMEOUT
-    ) {
+    if (checkCacheExpiration(data)) {
       dispatch(fetchCurrencies(code))
     }
   }, [])
