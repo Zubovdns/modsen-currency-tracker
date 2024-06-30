@@ -5,7 +5,7 @@ export interface CurrencyData {
 
 export interface CurrencyListItemProps {
   title: string
-  data: CurrencyData[]
+  data: { [key: string]: CurrencyData }
 }
 
 export interface CurrencyInitialState {
