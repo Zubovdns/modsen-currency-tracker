@@ -14,6 +14,8 @@ export const CurrencyItemContainer = styled.div`
 
   gap: 2vw;
 
+  cursor: pointer;
+
   @media ${device.md} {
     height: 12vw;
   }

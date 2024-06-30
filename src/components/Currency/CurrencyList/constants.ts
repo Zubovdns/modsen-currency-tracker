@@ -7,6 +7,9 @@ import libraIcon from '@assets/icons/libraIcon.svg'
 import pesoArgentinaIcon from '@assets/icons/pesoArgentinaIcon.svg'
 import wonIcon from '@assets/icons/wonIcon.svg'
 import yenIcon from '@assets/icons/yenIcon.svg'
+import { BASE_CURRENCY } from '@constants/currencyApi'
+
+export const mainCurrency = BASE_CURRENCY
 
 export const currencyNames: { [key: string]: string } = {
   BTC: 'Bitcoin',
@@ -17,7 +20,7 @@ export const currencyNames: { [key: string]: string } = {
   CNY: 'Chinese Yuan',
   AUD: 'Australian Dollar',
   CAD: 'Canadian Dollar',
-  GBP: 'British Pound',
+  LRD: 'Liberian Dollar',
 }
 
 export const currencyImages: { [key: string]: string } = {
@@ -29,5 +32,5 @@ export const currencyImages: { [key: string]: string } = {
   CNY: wonIcon,
   AUD: australianDollarIcon,
   CAD: canadianDollarIcon,
-  GBP: libraIcon,
+  LRD: libraIcon,
 }
