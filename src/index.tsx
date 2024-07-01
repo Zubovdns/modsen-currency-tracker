@@ -3,15 +3,15 @@ import { LIGHT } from '@constants/theme'
 import { useAppSelector } from '@store/hooks/hooks'
 import { persistor, store } from '@store/index'
 import { themeMode } from '@store/selectors/themeSelectors'
+import { GlobalStyles } from '@styles/GlobalStyles'
+import { darkTheme } from '@styles/Theme/darkTheme'
+import { lightTheme } from '@styles/Theme/lightTheme'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyles } from './styles/GlobalStyles'
-import { darkTheme } from './styles/Theme/darkTheme'
-import { lightTheme } from './styles/Theme/lightTheme'
 
 const MainComponent = () => {
   const theme = useAppSelector(themeMode)
