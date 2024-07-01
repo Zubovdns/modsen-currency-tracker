@@ -3,9 +3,20 @@ import { useWindowSize } from '@hooks/useWindowSize'
 import { FC } from 'react'
 import { menuData } from './config'
 import {
+  FMDiv,
+  FMLabelContainer,
   FooterLink,
   FooterLinksContainer,
+  FooterLinksDiv,
+  FooterLinksLabel,
+  FooterLinksList,
+  FooterLinksListItem,
+  FooterMobileIcon,
+  FooterMobileInput,
   FooterMobileLinksContainer,
+  FooterMobileLinksLinksLabel,
+  FooterMobileLinksList,
+  FooterMobileLinksListItem,
 } from './styled'
 
 export const LinksSection: FC = () => {
@@ -15,37 +26,37 @@ export const LinksSection: FC = () => {
       {isMobile ? (
         <FooterMobileLinksContainer>
           {menuData.map((menu, index) => (
-            <>
-              <div key={index}>
-                <input type="checkbox" />
-                <div>
-                  <h2>{menu.title}</h2>
-                  <img src={linksArrow}></img>
-                </div>
-                <ul>
-                  {menu.items.map((item, idx) => (
-                    <li key={idx}>
-                      <FooterLink to={item.to}>{item.name}</FooterLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </>
+            <FMDiv key={index}>
+              <FooterMobileInput type="checkbox" />
+              <FMLabelContainer>
+                <FooterMobileLinksLinksLabel>
+                  {menu.title}
+                </FooterMobileLinksLinksLabel>
+                <FooterMobileIcon src={linksArrow} />
+              </FMLabelContainer>
+              <FooterMobileLinksList>
+                {menu.items.map((item, idx) => (
+                  <FooterMobileLinksListItem key={idx}>
+                    <FooterLink to={item.to}>{item.name}</FooterLink>
+                  </FooterMobileLinksListItem>
+                ))}
+              </FooterMobileLinksList>
+            </FMDiv>
           ))}
         </FooterMobileLinksContainer>
       ) : (
         <FooterLinksContainer>
           {menuData.map((menu, index) => (
-            <div key={index}>
-              <h2>{menu.title}</h2>
-              <ul>
+            <FooterLinksDiv key={index}>
+              <FooterLinksLabel>{menu.title}</FooterLinksLabel>
+              <FooterLinksList>
                 {menu.items.map((item, idx) => (
-                  <li key={idx}>
+                  <FooterLinksListItem key={idx}>
                     <FooterLink to={item.to}>{item.name}</FooterLink>
-                  </li>
+                  </FooterLinksListItem>
                 ))}
-              </ul>
-            </div>
+              </FooterLinksList>
+            </FooterLinksDiv>
           ))}
         </FooterLinksContainer>
       )}

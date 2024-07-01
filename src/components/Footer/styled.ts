@@ -5,6 +5,7 @@ import styled from 'styled-components'
 export const FooterContainer = styled.footer`
   width: 100%;
   padding-top: 5vw;
+  padding-bottom: 3vw;
 
   display: flex;
   flex-direction: column;
@@ -39,55 +40,55 @@ export const FooterTextContainer = styled.div`
     align-items: center;
     justify-content: center;
   }
+`
 
-  & p {
-    color: #ffffff;
-    width: 30vw;
-    font-size: 1.4vw;
+export const FooterTitleContainer = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 1vw;
 
-    line-height: 2vw;
-
-    @media ${device.md} {
-      display: none;
-    }
+  @media ${device.md} {
+    justify-content: center;
+    gap: 2vw;
   }
+`
 
-  & div {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    gap: 1vw;
+export const FooterTitleImage = styled.img`
+  width: 3vw;
 
-    @media ${device.md} {
-      justify-content: center;
-      gap: 2vw;
-    }
+  @media ${device.md} {
+    width: 6vw;
+  }
+`
 
-    & img {
-      width: 3vw;
+export const FooterTitle = styled.h3`
+  font-size: 2vw;
 
-      @media ${device.md} {
-        width: 6vw;
-      }
-    }
+  background: linear-gradient(
+    90.18deg,
+    #00ce2c 0.18%,
+    #aedf23 49.3%,
+    #a3dc00 99.88%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 
-    & h3 {
-      font-size: 2vw;
+  @media ${device.md} {
+    font-size: 4vw;
+  }
+`
 
-      background: linear-gradient(
-        90.18deg,
-        #00ce2c 0.18%,
-        #aedf23 49.3%,
-        #a3dc00 99.88%
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+export const FooterSubText = styled.p`
+  color: #ffffff;
+  width: 30vw;
+  font-size: 1.4vw;
 
-      @media ${device.md} {
-        font-size: 4vw;
-      }
-    }
+  line-height: 2vw;
+
+  @media ${device.md} {
+    display: none;
   }
 `
 

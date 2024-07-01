@@ -59,9 +59,9 @@ export const TitleSubText = styled.p`
   margin-top: 2vw;
 
   @media ${device.md} {
-    width: 30vw;
+    width: 40vw;
     line-height: 4vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
     margin-top: 4vw;
   }
 `

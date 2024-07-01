@@ -5,7 +5,11 @@ import {
   FooterContainer,
   FooterCreditsText,
   FooterMainContainer,
+  FooterSubText,
   FooterTextContainer,
+  FooterTitle,
+  FooterTitleContainer,
+  FooterTitleImage,
 } from './styled'
 
 export const Footer: FC = () => {
@@ -13,16 +17,16 @@ export const Footer: FC = () => {
     <FooterContainer>
       <FooterMainContainer>
         <FooterTextContainer>
-          <div>
-            <img src={diagramLogo} />
-            <h3>Modsen Currency Tracker</h3>
-          </div>
-          <p>
+          <FooterTitleContainer>
+            <FooterTitleImage src={diagramLogo} />
+            <FooterTitle>Modsen Currency Tracker</FooterTitle>
+          </FooterTitleContainer>
+          <FooterSubText>
             Since then, the company has grown organically to. Starsup is the
             world&apos;s largest trading platform, with $12 billion worth of
             currency trading and 500,000 tickets sold daily to tens of thousands
             of traders worldwide.
-          </p>
+          </FooterSubText>
         </FooterTextContainer>
         <LinksSection />
       </FooterMainContainer>

@@ -1,11 +1,11 @@
 import { FC } from 'react'
-import { ToggleSwitch } from './styled'
+import { TSInput, TSLabel, ToggleSwitch } from './styled'
 
 export const ThemeSwitcher: FC = () => {
   return (
     <ToggleSwitch>
-      <input type="checkbox" id="dark-mode-toggle" />
-      <label htmlFor="dark-mode-toggle" className="switch"></label>
+      <TSInput type="checkbox" id="dark-mode-toggle" />
+      <TSLabel htmlFor="dark-mode-toggle"></TSLabel>
     </ToggleSwitch>
   )
 }
