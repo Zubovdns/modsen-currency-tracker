@@ -1,21 +1,35 @@
+import { App } from '@components/App'
+import { LIGHT } from '@constants/theme'
+import { useAppSelector } from '@store/hooks/hooks'
+import { persistor, store } from '@store/index'
+import { themeMode } from '@store/selectors/themeSelectors'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
-import { App } from '@components/App'
-
-import { persistor, store } from '@store/index'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
+import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from './styles/GlobalStyles'
+import { darkTheme } from './styles/Theme/darkTheme'
+import { lightTheme } from './styles/Theme/lightTheme'
+
+const MainComponent = () => {
+  const theme = useAppSelector(themeMode)
+
+  return (
+    <ThemeProvider theme={theme === LIGHT ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <App />
+    </ThemeProvider>
+  )
+}
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <GlobalStyles />
-          <App />
+          <MainComponent />
         </PersistGate>
       </Provider>
     </BrowserRouter>

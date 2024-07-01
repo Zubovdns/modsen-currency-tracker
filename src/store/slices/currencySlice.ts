@@ -10,7 +10,7 @@ const initialState: CurrencyInitialState = {
   status: '',
 }
 
-export const currencySlice = createSlice({
+export const currencySliceReducer = createSlice({
   name: 'currencies',
   initialState,
   reducers: {},

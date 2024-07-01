@@ -14,7 +14,7 @@ export const NavbarContainer = styled.nav`
 
 export const NavbarLink = styled(Link)`
   font-size: 1.5vw;
-  color: white;
+  color: ${({ theme }) => theme.navbarLinks};
 
   @media ${device.md} {
     font-size: 2.5vw;

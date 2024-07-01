@@ -4,9 +4,9 @@ import styled from 'styled-components'
 export const CurrencyItemContainer = styled.div`
   width: 100%;
   height: 8vw;
-  background-color: #202025;
+  background-color: ${({ theme }) => theme.currencyItemBackground};
   padding: 1vw;
-  border: 1px solid #474747;
+  border: 1px solid ${({ theme }) => theme.currencyItemBorderColor};
   border-radius: 0.5vw;
 
   display: flex;
@@ -35,7 +35,7 @@ export const CurrencyItemContentContainer = styled.div`
 `
 
 export const CurrencyItemName = styled.h4`
-  color: #d9d9d9;
+  color: ${({ theme }) => theme.currencyItemNameColor};
   font-weight: 100;
   font-size: 2.2vw;
 
@@ -45,7 +45,7 @@ export const CurrencyItemName = styled.h4`
 `
 
 export const CurrencyItemValue = styled.p`
-  color: #a7b2c3;
+  color: ${({ theme }) => theme.currencyItemValueColor};
   font-weight: 100;
   font-size: 1.8vw;
 

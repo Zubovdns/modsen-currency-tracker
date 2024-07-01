@@ -19,7 +19,7 @@ export const CurrencyListTitleBox = styled.div`
   width: 47%;
   height: 4vw;
   grid-column: 1 / -1;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid ${({ theme }) => theme.currencyItemTitleBorderColor};
   margin-top: 4vw;
 
   @media ${device.md} {
@@ -29,7 +29,7 @@ export const CurrencyListTitleBox = styled.div`
 `
 
 export const CurrencyListTitle = styled.h3`
-  color: #d9d9d9;
+  color: ${({ theme }) => theme.currencyItemTitleColor};
   font-size: 2vw;
 
   @media ${device.md} {

@@ -13,7 +13,7 @@ export const FooterLinksDiv = styled.div``
 export const FooterLinksLabel = styled.h2`
   margin-bottom: 20px;
   font-size: 1.5vw;
-  color: #ffffff;
+  color: ${({ theme }) => theme.footerLabelLinkColor};
 
   padding-bottom: 1.5vw;
 `
@@ -59,7 +59,7 @@ export const FooterMobileLinksListItem = styled.li`
 
 export const FooterMobileLinksLinksLabel = styled.h2`
   font-size: 3vw;
-  color: #ffffff;
+  color: ${({ theme }) => theme.footerLabelLinkColor};
 `
 
 export const FMLinksLinksList = styled.div`
@@ -67,7 +67,6 @@ export const FMLinksLinksList = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #545454;
 `
 
 export const FooterMobileLinksLinksContainer = styled.div`
@@ -75,15 +74,14 @@ export const FooterMobileLinksLinksContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #545454;
 `
 
 export const FooterLink = styled(Link)`
-  color: #888;
+  color: ${({ theme }) => theme.footerLinkColor};
   text-decoration: none;
 
   &:hover {
-    color: #fff;
+    color: ${({ theme }) => theme.footerLinkHoverColor};
   }
 `
 
@@ -99,7 +97,7 @@ export const FMLabelContainer = styled.div`
 export const FMDiv = styled.div`
   width: 100%;
   display: flex;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid ${({ theme }) => theme.footerLinksDivBorderColor};
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;

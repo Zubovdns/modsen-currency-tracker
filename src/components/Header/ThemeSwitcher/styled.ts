@@ -7,7 +7,7 @@ export const TSInput = styled.input.attrs({ type: 'checkbox' })`
 export const TSLabel = styled.label`
   width: 40px;
   height: 20px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.togglerBackground};
   border-radius: 10px;
   position: relative;
   cursor: pointer;
@@ -16,7 +16,7 @@ export const TSLabel = styled.label`
     content: '';
     width: 18px;
     height: 18px;
-    background-color: black;
+    background-color: ${({ theme }) => theme.togglerColor};
     border-radius: 50%;
     position: absolute;
     top: 1px;

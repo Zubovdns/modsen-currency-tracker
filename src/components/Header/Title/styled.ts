@@ -10,11 +10,7 @@ export const TitleContainer = styled.div`
   justify-content: center;
   gap: 3vw;
 
-  background: linear-gradient(
-    252.93deg,
-    #121212 11.77%,
-    rgba(36, 121, 64, 0) 91.12%
-  );
+  background: ${({ theme }) => theme.titleGradientBackground};
 
   @media ${device.md} {
     height: 40vw;
@@ -36,12 +32,7 @@ export const TitleTextContainer = styled.div`
 export const TitleMainText = styled.h1`
   font-size: 5vw;
 
-  background: linear-gradient(
-    90.18deg,
-    #00ce2c 0.18%,
-    #aedf23 49.3%,
-    #a3dc00 99.88%
-  );
+  background: ${({ theme }) => theme.titleGradient};
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -54,7 +45,7 @@ export const TitleMainText = styled.h1`
 export const TitleSubText = styled.p`
   width: 17vw;
   font-size: 1.2vw;
-  color: #d9d9d9;
+  color: ${({ theme }) => theme.titleSubText};
   text-align: center;
   margin-top: 2vw;
 

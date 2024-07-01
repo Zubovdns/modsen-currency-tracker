@@ -34,7 +34,7 @@ export const ModalItemTextContainer = styled.div`
 `
 
 export const ModalItemLabel = styled.h3`
-  color: #d9d9d9;
+  color: ${({ theme }) => theme.modalItemLabelColor};
   font-size: 2vw;
   font-weight: 100;
 
@@ -44,7 +44,7 @@ export const ModalItemLabel = styled.h3`
 `
 
 export const ModalItemConvertedValue = styled.p`
-  color: #a7b2c3;
+  color: ${({ theme }) => theme.modalItemValueColor};
   font-size: 1.5vw;
 
   @media ${device.md} {
@@ -81,7 +81,6 @@ export const ModalItemCurrencyImage = styled.img<SelectedProps>`
       ? `
       filter: brightness(1.2);
       border: 1px solid #D9D9D9;
-      
     `
       : `
       &:hover {

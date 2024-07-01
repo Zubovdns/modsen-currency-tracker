@@ -1,4 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import { currencySlice } from './currencySlice'
+import { currencySliceReducer } from './currencySlice'
+import { themeSliceReducer } from './themeSlice'
 
-export const rootReducer = combineReducers({ currencies: currencySlice })
+export const rootReducer = combineReducers({
+  currencies: currencySliceReducer,
+  theme: themeSliceReducer,
+})

@@ -15,7 +15,7 @@ export const StatusContainer = styled.div`
 `
 
 export const LastUpdateText = styled.p`
-  color: #d9d9d9;
+  color: ${({ theme }) => theme.statusColor};
   font-size: 1.5vw;
 
   @media ${device.md} {

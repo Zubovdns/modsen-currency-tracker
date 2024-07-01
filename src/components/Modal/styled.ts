@@ -10,22 +10,22 @@ export const ModalWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${({ theme }) => theme.modalWrapBackground};
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 `
 
 export const ModalContent = styled.div`
-  background: #202025;
+  background: ${({ theme }) => theme.modalBackground};
   width: 35vw;
   height: auto;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
   padding: 1.5vw;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px ${({ theme }) => theme.modalBoxShadow};
   position: relative;
-  border: 1px solid #474747;
+  border: 1px solid ${({ theme }) => theme.modalBorderColor};
 
   @media ${device.md} {
     width: 75vw;
