@@ -1,3 +1,4 @@
+import { device } from '@constants/breakpoints'
 import styled from 'styled-components'
 import { SelectedProps } from './types'
 
@@ -5,6 +6,10 @@ export const ModalItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2vw;
+
+  @media ${device.md} {
+    gap: 5vw;
+  }
 `
 
 export const ModalItemConverterContainer = styled.div`
@@ -15,6 +20,10 @@ export const ModalItemConverterContainer = styled.div`
 
 export const ModalItemCurrentCurrencyImage = styled.img`
   width: 5vw;
+
+  @media ${device.md} {
+    width: 13vw;
+  }
 `
 
 export const ModalItemTextContainer = styled.div`
@@ -28,11 +37,19 @@ export const ModalItemLabel = styled.h3`
   color: #d9d9d9;
   font-size: 2vw;
   font-weight: 100;
+
+  @media ${device.md} {
+    font-size: 5vw;
+  }
 `
 
 export const ModalItemConvertedValue = styled.p`
   color: #a7b2c3;
   font-size: 1.5vw;
+
+  @media ${device.md} {
+    font-size: 4vw;
+  }
 `
 
 export const ModalItemCurrenciesContainer = styled.div`
@@ -43,6 +60,10 @@ export const ModalItemCurrenciesContainer = styled.div`
   gap: 1vw;
   width: 100%;
   height: auto;
+
+  @media ${device.md} {
+    gap: 4vw;
+  }
 `
 
 export const ModalItemCurrencyImage = styled.img<SelectedProps>`
@@ -50,6 +71,10 @@ export const ModalItemCurrencyImage = styled.img<SelectedProps>`
   transition: filter 0.2s, background-color 0.2s;
   cursor: pointer;
   border-radius: 5px;
+
+  @media ${device.md} {
+    width: 10vw;
+  }
 
   ${({ isSelected }) =>
     isSelected

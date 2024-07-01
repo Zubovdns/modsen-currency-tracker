@@ -1,3 +1,4 @@
+import { device } from '@constants/breakpoints'
 import styled from 'styled-components'
 
 export const ModalWrap = styled.div`
@@ -16,15 +17,20 @@ export const ModalWrap = styled.div`
 
 export const ModalContent = styled.div`
   background: #202025;
-  width: 500px;
-  height: 300px;
+  width: 35vw;
+  height: auto;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 20px;
+  padding: 1.5vw;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   border: 1px solid #474747;
+
+  @media ${device.md} {
+    width: 75vw;
+    padding: 4vw;
+  }
 `
 
 export const ModalCloseButton = styled.button`
@@ -47,5 +53,9 @@ export const ModalCloseButton = styled.button`
 `
 
 export const ModalCloseButtonIcon = styled.img`
-  width: 30px;
+  width: 2vw;
+
+  @media ${device.md} {
+    width: 6vw;
+  }
 `
