@@ -1,4 +1,6 @@
-import { Home } from '@pages/Home'
+import { lazy } from 'react'
+
+const Home = lazy(() => import('@pages/Home/index'))
 
 export const HOME_ROUTE = '/'
 export const TIMELINE_ROUTE = '/timeline'
