@@ -76,8 +76,8 @@ export const ModalItemCurrencyImage = styled.img<SelectedProps>`
     width: 10vw;
   }
 
-  ${({ isSelected }) =>
-    isSelected
+  ${({ $isSelected }) =>
+    $isSelected
       ? `
       filter: brightness(1.2);
       border: 1px solid #D9D9D9;

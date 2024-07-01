@@ -48,7 +48,7 @@ export const CurrencyModalItem: FC<ModalItemProps> = ({ code }) => {
             src={icon}
             alt={currency}
             key={currency}
-            isSelected={selectedCurrency === currency}
+            $isSelected={selectedCurrency === currency}
             onClick={() => handleCurrencyClick(currency)}
           />
         ))}

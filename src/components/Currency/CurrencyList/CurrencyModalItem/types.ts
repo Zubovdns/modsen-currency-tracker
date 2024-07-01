@@ -3,5 +3,5 @@ export type ModalItemProps = {
 }
 
 export type SelectedProps = {
-  isSelected: boolean
+  $isSelected: boolean
 }
