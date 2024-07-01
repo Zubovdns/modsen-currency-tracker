@@ -8,7 +8,7 @@ export const FooterLinksContainer = styled.div`
   gap: 10vw;
 `
 
-export const FooterLinksDiv = styled.h2``
+export const FooterLinksDiv = styled.div``
 
 export const FooterLinksLabel = styled.h2`
   margin-bottom: 20px;
