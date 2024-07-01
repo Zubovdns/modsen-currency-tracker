@@ -27,7 +27,7 @@ export const GlobalStyles = createGlobalStyle`
         display: flex;
         flex-direction: column;
         min-height: 100%;
-        font-family: Arial, sans-serif;
+        font-family: Poppins;
        
     }   
     #root {
@@ -36,6 +36,4 @@ export const GlobalStyles = createGlobalStyle`
       flex-direction: column;
       align-items:center;
     }
-  
-  
 `
