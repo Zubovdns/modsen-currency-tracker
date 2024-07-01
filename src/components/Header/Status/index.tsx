@@ -8,7 +8,6 @@ import { LastUpdateSvg, LastUpdateText, StatusContainer } from './styled'
 
 export const Status: FC = () => {
   const data = useAppSelector(currencies())
-  console.log(data)
 
   return (
     <StatusContainer>
