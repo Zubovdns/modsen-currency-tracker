@@ -1,5 +1,6 @@
 import diagramLogo from '@assets/icons/diagramLogo.svg'
 import { FC } from 'react'
+import { HEADER_DESCRIPTION, HEADER_TITLE_1, HEADER_TITLE_2 } from './constants'
 import {
   TitleContainer,
   TitleLogo,
@@ -13,11 +14,9 @@ export const Title: FC = () => {
   return (
     <TitleContainer>
       <TitleTextContainer>
-        <TitleMainText>Modsen Currency</TitleMainText>
-        <TitleMainText>Tracker</TitleMainText>
-        <TitleSubText>
-          Quotes for the dollar and other international currencies.
-        </TitleSubText>
+        <TitleMainText>{HEADER_TITLE_1}</TitleMainText>
+        <TitleMainText>{HEADER_TITLE_2}</TitleMainText>
+        <TitleSubText>{HEADER_DESCRIPTION}</TitleSubText>
       </TitleTextContainer>
       <TitleLogoContainer>
         <TitleLogo src={diagramLogo} />
