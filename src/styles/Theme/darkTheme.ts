@@ -41,4 +41,6 @@ export const darkTheme = {
   modalItemImageBorderSelectedColor: '#D9D9D9',
 
   pageLoaderColor: '#fff',
+
+  pageFallbackColor: '#fff',
 }

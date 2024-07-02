@@ -40,4 +40,6 @@ export const lightTheme = {
   modalItemImageBorderSelectedColor: '#D9D9D9',
 
   pageLoaderColor: '#000',
+
+  pageFallbackColor: '#fff',
 }

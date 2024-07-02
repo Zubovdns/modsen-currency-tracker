@@ -18,7 +18,7 @@ export const Currency: FC = () => {
 
   return (
     <CurrencyContainer>
-      <CurrencyList title="Quotes" data={data?.data} />
+      <CurrencyList title="Quotes" data={data.data} />
     </CurrencyContainer>
   )
 }
