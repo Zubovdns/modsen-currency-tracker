@@ -9,7 +9,7 @@ export const CONTACT_ROUTE = '/contact'
 
 export const routes = [
   { path: HOME_ROUTE, Page: Home },
-  { path: TIMELINE_ROUTE, Page: 'timeline' },
-  { path: BANK_CARD_ROUTE, Page: 'bank-card' },
-  { path: CONTACT_ROUTE, Page: 'contact' },
+  { path: TIMELINE_ROUTE, Page: 'div' },
+  { path: BANK_CARD_ROUTE, Page: 'div' },
+  { path: CONTACT_ROUTE, Page: 'div' },
 ]
