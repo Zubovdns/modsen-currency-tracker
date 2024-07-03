@@ -43,4 +43,8 @@ export const darkTheme = {
   pageLoaderColor: '#fff',
 
   pageFallbackColor: '#fff',
+
+  chartTicksColor: '#CDCDCD',
+  chartGridColor: '#1C1C1D',
+  chartTitleColor: '#fff',
 }

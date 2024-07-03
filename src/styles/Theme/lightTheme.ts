@@ -42,4 +42,8 @@ export const lightTheme = {
   pageLoaderColor: '#000',
 
   pageFallbackColor: '#fff',
+
+  chartTicksColor: '#000',
+  chartGridColor: '#1C1C1D',
+  chartTitleColor: '#000',
 }

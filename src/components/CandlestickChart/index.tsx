@@ -1,49 +1,62 @@
 import { Chart, registerables } from 'chart.js'
 import { Component, createRef } from 'react'
-import { config } from './config'
+import { withTheme } from 'styled-components'
+import { config } from './config/config'
 import { ChartBox, ChartCard } from './styled'
 import { Props, State } from './types'
 
-export class CandlestickChart extends Component<Props, State> {
-  private chartRef = createRef<HTMLCanvasElement>()
-  private chartInstance: Chart | undefined
+export const CandlestickChart = withTheme(
+  class CandlestickChart extends Component<Props, State> {
+    private chartRef = createRef<HTMLCanvasElement>()
+    private chartInstance: Chart | undefined
 
-  state: State = {
-    chartVersion: '',
-  }
+    state: State = {}
 
-  componentDidMount() {
-    this.initChart()
-  }
-
-  componentWillUnmount() {
-    this.destroyChart()
-  }
-
-  initChart() {
-    Chart.register(...registerables)
-
-    if (this.chartRef.current) {
-      this.chartInstance = new Chart(this.chartRef.current, config)
-      this.setState({ chartVersion: Chart.version })
+    componentDidMount() {
+      this.initChart()
     }
-  }
 
-  destroyChart() {
-    if (this.chartInstance) {
-      this.chartInstance.destroy()
+    componentDidUpdate(prevProps: Props) {
+      if (prevProps.theme !== this.props.theme) {
+        this.updateChart()
+      }
     }
-  }
 
-  render() {
-    return (
-      <>
+    componentWillUnmount() {
+      this.destroyChart()
+    }
+
+    initChart() {
+      Chart.register(...registerables)
+
+      if (this.chartRef.current) {
+        this.chartInstance = new Chart(
+          this.chartRef.current,
+          config(this.props.theme)
+        )
+      }
+    }
+
+    updateChart() {
+      this.destroyChart()
+      this.initChart()
+    }
+
+    destroyChart() {
+      if (this.chartInstance) {
+        this.chartInstance.destroy()
+        this.chartInstance = undefined
+      }
+    }
+
+    render() {
+      return (
         <ChartCard>
           <ChartBox>
-            <canvas ref={this.chartRef}></canvas>
+            <canvas ref={this.chartRef} />
           </ChartBox>
         </ChartCard>
-      </>
-    )
+      )
+    }
   }
-}
+)
