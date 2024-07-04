@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const FileManagerPlugin = require('filemanager-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: path.join(__dirname, '..', './src/index.tsx'),
@@ -61,7 +62,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, '..', './src/index.html'),
+      template: path.join(__dirname, '..', './public/index.html'),
       filename: 'index.html',
     }),
     new FileManagerPlugin({
@@ -73,6 +74,10 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
+    }),
+    new Dotenv({
+      safe: false,
+      systemvars: true,
     }),
   ],
   devServer: {

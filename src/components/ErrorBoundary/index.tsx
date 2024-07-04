@@ -1,14 +1,18 @@
 import { Component, ErrorInfo } from 'react'
+
 import { PageFallback } from './PageFallback'
 import { Props, State } from './types'
 
-class ErrorBoundary extends Component<Props, State> {
+export const ErrorBoundary = class ErrorBoundary extends Component<
+  Props,
+  State
+> {
   constructor(props: Props) {
     super(props)
     this.state = { hasError: false }
   }
 
-  static getDerivedStateFromError(_: Error): State {
+  static getDerivedStateFromError(): State {
     return { hasError: true }
   }
 
@@ -27,5 +31,3 @@ class ErrorBoundary extends Component<Props, State> {
     return children
   }
 }
-
-export default ErrorBoundary

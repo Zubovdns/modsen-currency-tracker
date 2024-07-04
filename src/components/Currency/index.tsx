@@ -1,8 +1,9 @@
+import { FC, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '@store/hooks/hooks'
 import { currencies } from '@store/selectors/currenciesSelectors'
 import { fetchCurrencies } from '@store/thunks/fetchCurrencies'
 import { checkCacheExpiration } from '@utils/checkCacheExpiration'
-import { FC, useEffect } from 'react'
+
 import { CurrencyList } from './CurrencyList'
 import { CurrencyContainer } from './styled'
 
@@ -18,7 +19,7 @@ export const Currency: FC = () => {
 
   return (
     <CurrencyContainer>
-      <CurrencyList title="Quotes" data={data.data} />
+      <CurrencyList title="Quotes" data={data?.data} />
     </CurrencyContainer>
   )
 }

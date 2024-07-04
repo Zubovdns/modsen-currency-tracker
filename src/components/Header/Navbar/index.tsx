@@ -1,6 +1,8 @@
-import diagramLogo from '@assets/icons/diagramLogo.svg'
 import { FC } from 'react'
+import diagramLogo from '@assets/icons/diagramLogo.svg'
+
 import { ThemeSwitcher } from '../ThemeSwitcher'
+
 import { NAVBAR_LINKS_LIST } from './constants'
 import {
   NavbarContainer,
@@ -10,8 +12,7 @@ import {
   NavbarLogo,
 } from './styled'
 
-export const Navbar: FC = () => {
-  return (
+export const Navbar: FC = () => (
     <NavbarContainer>
       <NavbarLogo src={diagramLogo} />
       <NavbarLinksList>
@@ -24,4 +25,3 @@ export const Navbar: FC = () => {
       <ThemeSwitcher />
     </NavbarContainer>
   )
-}

@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import Modal from '@components/Modal'
 import { CurrencyData } from '@src/interfaces/currencies'
-import { useState } from 'react'
-import { CurrencyModalItem } from '../CurrencyModalItem'
+
 import { currencyImages, currencyNames } from '../constants'
+import { CurrencyModalItem } from '../CurrencyModalItem'
+
 import {
   CurrencyItemContainer,
   CurrencyItemContentContainer,

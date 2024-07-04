@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 import {
   BASE_CURRENCY,
   CURRENCIES,
@@ -7,6 +5,7 @@ import {
 } from '@constants/currencyApi'
 import { ReturnsFetchCurrenciesData } from '@interfaces/currencies'
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios'
 
 export const fetchCurrencies = createAsyncThunk<
   ReturnsFetchCurrenciesData,
@@ -14,6 +13,9 @@ export const fetchCurrencies = createAsyncThunk<
 >('currencies/fetchCurrencies', async (base_currency = BASE_CURRENCY) => {
   try {
     const res = await axios.get(CURRENCY_API_URL, {
+      headers: {
+        apikey: process.env.CURRENCY_API_KEY,
+      },
       params: {
         currencies: CURRENCIES,
         base_currency,

@@ -1,13 +1,11 @@
-import { Currency } from '@components/Currency'
-import ErrorBoundary from '@components/ErrorBoundary'
 import { FC } from 'react'
+import { Currency } from '@components/Currency'
+import { ErrorBoundary } from '@components/ErrorBoundary'
 
-const Home: FC = () => {
-  return (
-    <ErrorBoundary>
-      <Currency />
-    </ErrorBoundary>
-  )
-}
+const Home: FC = () => (
+  <ErrorBoundary>
+    <Currency />
+  </ErrorBoundary>
+)
 
 export default Home

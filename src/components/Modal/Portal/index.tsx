@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
+
 import { PORTAL_ERROR_MSG } from './constants'
 import { ContainerOptions, PortalProps } from './types'
 

@@ -1,5 +1,4 @@
-export const CURRENCY_API_URL =
-  'https://api.currencyapi.com/v3/latest?apikey=cur_live_MOMgPPO8NY9gvT91PptySoTvKosKarHVp58onLhi'
+export const CURRENCY_API_URL = 'https://api.currencyapi.com/v3/latest'
 
 export const CURRENCIES = 'BTC,EUR,ARS,JPY,CNY,AUD,CAD,LRD,USD'
 

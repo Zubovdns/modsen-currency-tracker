@@ -1,11 +1,10 @@
+import { FC, Suspense } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import { MainLayout } from '@components/MainLayout'
 import { PageLoader } from '@components/PageLoader'
 import { routes } from '@constants/routes'
-import { FC, Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
 
-export const App: FC = () => {
-  return (
+export const App: FC = () => (
     <MainLayout>
       <Suspense fallback={<PageLoader />}>
         <Routes>
@@ -16,4 +15,3 @@ export const App: FC = () => {
       </Suspense>
     </MainLayout>
   )
-}

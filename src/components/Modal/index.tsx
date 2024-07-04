@@ -1,4 +1,3 @@
-import closeModalIcon from '@assets/icons/closeModalIcon.svg'
 import {
   FC,
   MouseEventHandler,
@@ -7,8 +6,10 @@ import {
   useRef,
   useState,
 } from 'react'
-import { Portal, createContainer } from './Portal'
+import closeModalIcon from '@assets/icons/closeModalIcon.svg'
+
 import { MODAL_CONTAINER_ID } from './constants'
+import { createContainer, Portal } from './Portal'
 import {
   ModalCloseButton,
   ModalCloseButtonIcon,
@@ -58,7 +59,8 @@ const Modal: FC<ModalProps> = ({ onClose, children }) => {
     [onClose]
   )
 
-  return isMounted ? (
+  if (!isMounted) return null
+  return (
     <Portal id={MODAL_CONTAINER_ID}>
       <ModalWrap ref={rootRef}>
         <ModalContent>
@@ -69,7 +71,7 @@ const Modal: FC<ModalProps> = ({ onClose, children }) => {
         </ModalContent>
       </ModalWrap>
     </Portal>
-  ) : null
+  )
 }
 
 export default Modal

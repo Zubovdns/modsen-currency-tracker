@@ -1,5 +1,6 @@
-import diagramLogo from '@assets/icons/diagramLogo.svg'
 import { FC } from 'react'
+import diagramLogo from '@assets/icons/diagramLogo.svg'
+
 import { HEADER_DESCRIPTION, HEADER_TITLE_1, HEADER_TITLE_2 } from './constants'
 import {
   TitleContainer,
@@ -10,8 +11,7 @@ import {
   TitleTextContainer,
 } from './styled'
 
-export const Title: FC = () => {
-  return (
+export const Title: FC = () => (
     <TitleContainer>
       <TitleTextContainer>
         <TitleMainText>{HEADER_TITLE_1}</TitleMainText>
@@ -23,4 +23,3 @@ export const Title: FC = () => {
       </TitleLogoContainer>
     </TitleContainer>
   )
-}
