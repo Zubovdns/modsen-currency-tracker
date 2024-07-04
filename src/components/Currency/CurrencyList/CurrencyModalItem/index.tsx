@@ -1,9 +1,11 @@
+import { FC, useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '@store/hooks/hooks'
 import { currencies } from '@store/selectors/currenciesSelectors'
 import { fetchCurrencies } from '@store/thunks/fetchCurrencies'
 import { checkCacheExpiration } from '@utils/checkCacheExpiration'
-import { FC, useEffect, useState } from 'react'
+
 import { currencyImages, mainCurrency } from '../constants'
+
 import {
   ModalItemContainer,
   ModalItemConvertedValue,

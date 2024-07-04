@@ -1,4 +1,3 @@
-import closeModalIcon from '@assets/icons/closeModalIcon.svg'
 import {
   FC,
   MouseEventHandler,
@@ -7,8 +6,10 @@ import {
   useRef,
   useState,
 } from 'react'
-import { Portal, createContainer } from './Portal'
+import closeModalIcon from '@assets/icons/closeModalIcon.svg'
+
 import { MODAL_CONTAINER_ID } from './constants'
+import { createContainer,Portal } from './Portal'
 import {
   ModalCloseButton,
   ModalCloseButtonIcon,

@@ -1,8 +1,8 @@
 import {
-  HOME_ROUTE,
-  TIMELINE_ROUTE,
   BANK_CARD_ROUTE,
   CONTACT_ROUTE,
+  HOME_ROUTE,
+  TIMELINE_ROUTE,
 } from '@constants/routes'
 
 export const NAVBAR_LINKS_LIST = [

@@ -1,5 +1,6 @@
 import { device } from '@constants/breakpoints'
 import styled from 'styled-components'
+
 import { SelectedProps } from './types'
 
 export const ModalItemContainer = styled.div`

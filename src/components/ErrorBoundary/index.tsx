@@ -1,4 +1,5 @@
 import { Component, ErrorInfo } from 'react'
+
 import { PageFallback } from './PageFallback'
 import { Props, State } from './types'
 

@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 import {
   BASE_CURRENCY,
   CURRENCIES,
@@ -7,6 +5,7 @@ import {
 } from '@constants/currencyApi'
 import { ReturnsFetchCurrenciesData } from '@interfaces/currencies'
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios'
 
 export const fetchCurrencies = createAsyncThunk<
   ReturnsFetchCurrenciesData,

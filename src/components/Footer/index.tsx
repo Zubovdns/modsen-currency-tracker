@@ -1,11 +1,12 @@
-import diagramLogo from '@assets/icons/diagramLogo.svg'
 import { FC } from 'react'
-import { LinksSection } from './LinksSection'
+import diagramLogo from '@assets/icons/diagramLogo.svg'
+
 import {
   FOOTER_DESCRIPTION,
   FOOTER_DISCLAIMER,
   FOOTER_TITLE,
 } from './constants'
+import { LinksSection } from './LinksSection'
 import {
   FooterContainer,
   FooterCreditsText,
@@ -17,8 +18,7 @@ import {
   FooterTitleImage,
 } from './styled'
 
-export const Footer: FC = () => {
-  return (
+export const Footer: FC = () => (
     <FooterContainer>
       <FooterMainContainer>
         <FooterTextContainer>
@@ -33,4 +33,3 @@ export const Footer: FC = () => {
       <FooterCreditsText>{FOOTER_DISCLAIMER}</FooterCreditsText>
     </FooterContainer>
   )
-}

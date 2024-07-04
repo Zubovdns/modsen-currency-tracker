@@ -1,5 +1,5 @@
-import { device } from '@constants/breakpoints'
 import { Link } from 'react-router-dom'
+import { device } from '@constants/breakpoints'
 import styled from 'styled-components'
 
 export const NavbarContainer = styled.nav`
