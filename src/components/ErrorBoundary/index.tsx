@@ -12,7 +12,7 @@ export const ErrorBoundary = class ErrorBoundary extends Component<
     this.state = { hasError: false }
   }
 
-  static getDerivedStateFromError(_: Error): State {
+  static getDerivedStateFromError(): State {
     return { hasError: true }
   }
 
