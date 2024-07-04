@@ -1,6 +1,7 @@
-import { Chart, registerables } from 'chart.js'
 import { Component, createRef } from 'react'
+import { Chart, registerables } from 'chart.js'
 import { withTheme } from 'styled-components'
+
 import { config } from './config/config'
 import { ChartBox, ChartCard } from './styled'
 import { Props, State } from './types'

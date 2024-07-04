@@ -1,3 +1,3 @@
-export type Props = {}
+export type Props = Record<string, never>
 
-export type State = {}
+export type State = Record<string, never>

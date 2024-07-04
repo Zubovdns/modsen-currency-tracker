@@ -5,7 +5,7 @@ export type Props = {
   theme: DefaultTheme
 }
 
-export type State = {}
+export type State = Record<string, never>
 
 export type CustomDataPoint = {
   x: number

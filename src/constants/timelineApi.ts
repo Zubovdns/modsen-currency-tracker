@@ -1,6 +1,5 @@
 export const TIMELINE_API_URL =
   'https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_'
-export const TIMELINE_API_KEY = '322625B8-6F44-403C-BDAB-A07521B384E4'
 
 export const TIMELINE_CURRENCIES_CODES = {
   USD: 'USD',

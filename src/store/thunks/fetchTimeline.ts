@@ -1,7 +1,4 @@
-import axios from 'axios'
-
 import {
-  TIMELINE_API_KEY,
   TIMELINE_API_URL,
   TIMELINE_BASE_CURRENCY,
 } from '@constants/timelineApi'
@@ -10,6 +7,7 @@ import {
   ReturnsFetchTimelineData,
 } from '@interfaces/timeline'
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios'
 
 export const fetchTimeline = createAsyncThunk<
   ReturnsFetchTimelineData,
@@ -22,7 +20,7 @@ export const fetchTimeline = createAsyncThunk<
         TIMELINE_API_URL + currencyTo + '_' + baseCurrency,
         {
           headers: {
-            'X-CoinAPI-Key': TIMELINE_API_KEY,
+            'X-CoinAPI-Key': process.env.TIMELINE_API_KEY,
           },
           params: {
             period_id: periodId,

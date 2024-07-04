@@ -1,10 +1,13 @@
-import { ChartConfiguration, TooltipItem } from 'chart.js'
 import 'chartjs-adapter-date-fns'
+
+import { ChartConfiguration, TooltipItem } from 'chart.js'
 import { DefaultTheme } from 'styled-components'
+
 import { CustomDataPoint } from '../types'
-import { mockData } from './mockData'
+
 import { candlestick } from './plugins/candlestick'
 import { crosshair } from './plugins/crosshair'
+import { mockData } from './mockData'
 
 export const config = (theme: DefaultTheme): ChartConfiguration<'bar'> => ({
   type: 'bar',

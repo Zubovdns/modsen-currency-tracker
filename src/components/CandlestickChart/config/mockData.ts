@@ -1,4 +1,5 @@
 import { ChartData, ScriptableContext } from 'chart.js'
+
 import { CustomDataPoint } from '../types'
 
 function generateRandomDataPoint(date: Date): CustomDataPoint {
