@@ -13,6 +13,9 @@ export const fetchCurrencies = createAsyncThunk<
 >('currencies/fetchCurrencies', async (base_currency = BASE_CURRENCY) => {
   try {
     const res = await axios.get(CURRENCY_API_URL, {
+      headers: {
+        apikey: process.env.CURRENCY_API_KEY,
+      },
       params: {
         currencies: CURRENCIES,
         base_currency,
