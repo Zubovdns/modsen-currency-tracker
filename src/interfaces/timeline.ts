@@ -1,3 +1,5 @@
 export interface TimelineInitialState {
-  currency: (number | [number, number] | null)[]
+  currency: TimelinePoint[]
 }
+
+export type TimelinePoint = number | [number, number] | null
