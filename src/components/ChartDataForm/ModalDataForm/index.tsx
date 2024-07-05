@@ -2,19 +2,19 @@ import { ChangeEvent, Component, FormEvent } from 'react'
 
 import {
   AddButton,
+  ButtonContainer,
+  ClearDataButton,
   DateInput,
   FieldContainer,
   FormContainer,
   NumberInput,
+  RandomDataButton,
   RemoveButton,
   SubmitButton,
 } from './styled'
-import { Field, Props, State } from './types'
+import { connector, Field, Props, State } from './types'
 
-export const ModalDataForm = class ModalDataForm extends Component<
-  Props,
-  State
-> {
+class ModalDataFormClass extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
@@ -48,17 +48,37 @@ export const ModalDataForm = class ModalDataForm extends Component<
   handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     const { date, fields } = this.state
-    const groupedData = fields.map((field, index) => ({
-      x: new Date(new Date(date).setDate(new Date(date).getDate() + index))
-        .toISOString()
-        .split('T')[0],
-      o: +field.o,
-      h: +field.h,
-      l: +field.l,
-      c: +field.c,
-      s: [+field.o, +field.c],
-    }))
-    console.log(groupedData)
+    const { setUserChartData, onClose } = this.props
+    const groupedData = fields.map(
+      (field, index) =>
+        ({
+          x: new Date(
+            new Date(date).setDate(new Date(date).getDate() + index)
+          ).setHours(0, 0, 0, 0),
+          o: +field.o,
+          h: +field.h,
+          l: +field.l,
+          c: +field.c,
+          s: [+field.o, +field.c],
+        } as unknown as number | [number, number] | null)
+    )
+
+    setUserChartData(groupedData)
+    onClose()
+  }
+
+  handleRandom = (e: FormEvent) => {
+    e.preventDefault()
+    const { setRandomChartData, onClose } = this.props
+    setRandomChartData()
+    onClose()
+  }
+
+  handleClear = (e: FormEvent) => {
+    e.preventDefault()
+    const { clearChartData, onClose } = this.props
+    clearChartData()
+    onClose()
   }
 
   render() {
@@ -119,7 +139,15 @@ export const ModalDataForm = class ModalDataForm extends Component<
           </AddButton>
           <SubmitButton type="submit">Submit</SubmitButton>
         </form>
+        <ButtonContainer>
+          <RandomDataButton onClick={this.handleRandom}>
+            Random
+          </RandomDataButton>
+          <ClearDataButton onClick={this.handleClear}>Clear</ClearDataButton>
+        </ButtonContainer>
       </FormContainer>
     )
   }
 }
+
+export const ModalDataForm = connector(ModalDataFormClass)

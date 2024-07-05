@@ -4,60 +4,60 @@ import { withTheme } from 'styled-components'
 
 import { config } from './config/config'
 import { ChartBox, ChartCard } from './styled'
-import { Props, State } from './types'
+import { connector, Props, State } from './types'
 
-export const CandlestickChart = withTheme(
-  class CandlestickChart extends Component<Props, State> {
-    private chartRef = createRef<HTMLCanvasElement>()
-    private chartInstance: Chart | undefined
+class CandlestickChartClass extends Component<Props, State> {
+  private chartRef = createRef<HTMLCanvasElement>()
+  private chartInstance: Chart | undefined
 
-    state: State = {}
+  state: State = {}
 
-    componentDidMount() {
-      this.initChart()
+  componentDidMount() {
+    this.initChart()
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps.theme !== this.props.theme) {
+      this.updateChart()
     }
+  }
 
-    componentDidUpdate(prevProps: Props) {
-      if (prevProps.theme !== this.props.theme) {
-        this.updateChart()
-      }
-    }
+  componentWillUnmount() {
+    this.destroyChart()
+  }
 
-    componentWillUnmount() {
-      this.destroyChart()
-    }
+  initChart() {
+    Chart.register(...registerables)
 
-    initChart() {
-      Chart.register(...registerables)
-
-      if (this.chartRef.current) {
-        this.chartInstance = new Chart(
-          this.chartRef.current,
-          config(this.props.theme)
-        )
-      }
-    }
-
-    updateChart() {
-      this.destroyChart()
-      this.initChart()
-    }
-
-    destroyChart() {
-      if (this.chartInstance) {
-        this.chartInstance.destroy()
-        this.chartInstance = undefined
-      }
-    }
-
-    render() {
-      return (
-        <ChartCard>
-          <ChartBox>
-            <canvas ref={this.chartRef} />
-          </ChartBox>
-        </ChartCard>
+    if (this.chartRef.current) {
+      this.chartInstance = new Chart(
+        this.chartRef.current,
+        config(this.props.theme, this.props.data)
       )
     }
   }
-)
+
+  updateChart() {
+    this.destroyChart()
+    this.initChart()
+  }
+
+  destroyChart() {
+    if (this.chartInstance) {
+      this.chartInstance.destroy()
+      this.chartInstance = undefined
+    }
+  }
+
+  render() {
+    return (
+      <ChartCard>
+        <ChartBox>
+          <canvas ref={this.chartRef} />
+        </ChartBox>
+      </ChartCard>
+    )
+  }
+}
+
+export const CandlestickChart = withTheme(connector(CandlestickChartClass))

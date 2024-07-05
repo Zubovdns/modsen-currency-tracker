@@ -33,7 +33,7 @@ export const ChartDataForm = class ChartDataForm extends Component<
         <Button onClick={this.handleModalOpen}>New custom data</Button>
         {this.state.isModalActive && (
           <Modal onClose={this.handleModalClose}>
-            <ModalDataForm />
+            <ModalDataForm onClose={this.handleModalClose} />
           </Modal>
         )}
       </Container>

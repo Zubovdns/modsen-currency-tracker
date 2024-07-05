@@ -1,33 +1,30 @@
-import {
-  ReturnsFetchTimelineData,
-  TimelineInitialState,
-} from '@interfaces/timeline'
+import { TimelineInitialState } from '@interfaces/timeline'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { fetchTimeline } from '@store/thunks/fetchTimeline'
+import { generateDataPoints } from '@utils/generateDataPoints'
 
 const initialState: TimelineInitialState = {
-  currency: {},
-  status: '',
+  currency: [],
 }
 
-export const timelineSliceReducer = createSlice({
+const timelineSlice = createSlice({
   name: 'timeline',
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchTimeline.pending, (state) => {
-        state.status = 'loading'
-      })
-      .addCase(
-        fetchTimeline.fulfilled,
-        (state, action: PayloadAction<ReturnsFetchTimelineData>) => {
-          state.currency = { ...state.currency, ...action.payload }
-          state.status = 'done'
-        }
-      )
-      .addCase(fetchTimeline.rejected, (state) => {
-        state.status = 'failed'
-      })
+  reducers: {
+    setUserChartData: (
+      state,
+      action: PayloadAction<(number | [number, number] | null)[]>
+    ) => {
+      state.currency = action.payload
+    },
+    setRandomChartData: (state) => {
+      state.currency = generateDataPoints(10000, 60000)
+    },
+    clearChartData: (state) => {
+      state.currency = []
+    },
   },
-}).reducer
+})
+
+export const { setUserChartData, setRandomChartData, clearChartData } =
+  timelineSlice.actions
+export const timelineSliceReducer = timelineSlice.reducer

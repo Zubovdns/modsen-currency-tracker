@@ -1,9 +1,28 @@
+import { connect, ConnectedProps } from 'react-redux'
+import {
+  clearChartData,
+  setRandomChartData,
+  setUserChartData,
+} from '@store/slices/timelineSlice'
+import { RootState } from '@store/types'
 import { ScriptableContext } from 'chart.js'
 import { DefaultTheme } from 'styled-components'
 
-export type Props = {
+const mapStateToProps = (state: RootState) => ({
+  data: state.timeline.currency,
+})
+
+const mapDispatchToProps = {
+  setUserChartData,
+  setRandomChartData,
+  clearChartData,
+}
+
+export interface Props extends ConnectedProps<typeof connector> {
   theme: DefaultTheme
 }
+
+export const connector = connect(mapStateToProps, mapDispatchToProps)
 
 export type State = Record<string, never>
 

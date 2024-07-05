@@ -22,6 +22,12 @@ export const FieldContainer = styled.div`
   margin-bottom: 0.5vw;
 `
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 0.5vw;
+`
+
 export const NumberInput = styled.input`
   padding: 0.5vw;
   border-radius: 4px;
@@ -61,4 +67,26 @@ export const SubmitButton = styled.button`
   cursor: pointer;
   width: 100%;
   margin-top: 1.5vw;
+`
+
+export const RandomDataButton = styled.button`
+  background-color: #474747;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5vw;
+  cursor: pointer;
+  width: calc(100% / 2 - 0.5vw);
+  margin-right: 0.5vw;
+`
+
+export const ClearDataButton = styled.button`
+  background-color: #474747;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5vw;
+  cursor: pointer;
+  width: calc(100% / 2 - 0.5vw);
+  margin-right: 0.5vw;
 `
