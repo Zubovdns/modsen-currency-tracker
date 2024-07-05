@@ -1,17 +1,28 @@
 import 'chartjs-adapter-date-fns'
 
-import { ChartConfiguration, TooltipItem } from 'chart.js'
+import { generateDataPoints } from '@utils/generateDataPoints'
+import { ChartConfiguration, ScriptableContext, TooltipItem } from 'chart.js'
 import { DefaultTheme } from 'styled-components'
 
 import { CustomDataPoint } from '../types'
 
 import { candlestick } from './plugins/candlestick'
 import { crosshair } from './plugins/crosshair'
-import { mockData } from './mockData'
 
 export const config = (theme: DefaultTheme): ChartConfiguration<'bar'> => ({
   type: 'bar',
-  data: mockData,
+  data: {
+    datasets: [
+      {
+        label: 'Weekly Sales',
+        data: generateDataPoints(1000, 10000),
+        backgroundColor: (ctx: ScriptableContext<'bar'>) => {
+          const raw = ctx.raw as CustomDataPoint
+          return raw.c < raw.o ? theme.chartCandleRed : theme.chartCandleGreen
+        },
+      },
+    ],
+  },
   options: {
     layout: {
       padding: {

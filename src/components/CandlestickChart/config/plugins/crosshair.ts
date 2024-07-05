@@ -12,7 +12,9 @@ export const crosshair: Plugin<'bar'> = {
       canvas,
     } = chart
 
-    const activeTooltip = tooltip as TooltipModel<'bar'> & { _active: any[] }
+    const activeTooltip = tooltip as TooltipModel<'bar'> & {
+      _active: unknown[]
+    }
 
     if (
       activeTooltip &&
