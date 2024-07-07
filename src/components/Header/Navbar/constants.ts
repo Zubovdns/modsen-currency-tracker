@@ -3,7 +3,7 @@ import {
   CONTACT_ROUTE,
   HOME_ROUTE,
   TIMELINE_ROUTE,
-} from '@constants/routes'
+} from '@routes/routes'
 
 export const NAVBAR_LINKS_LIST = [
   { to: HOME_ROUTE, content: 'Home' },

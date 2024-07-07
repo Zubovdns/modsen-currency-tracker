@@ -30,6 +30,7 @@
       "@store/*": ["store/*"],
       "@types/*": ["types/*"],
       "@pages/*": ["pages/*"],
+      "@routes/*": ["routes/*"],
       "@interfaces/*": ["interfaces/*"],
       "@styles/*": ["styles/*"],
       "@src/*": ["*"]
