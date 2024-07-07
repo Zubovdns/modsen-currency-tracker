@@ -71,4 +71,12 @@ export const darkTheme = {
 
   notificationBackground: '#333',
   notificationText: 'wheat',
+
+  contactFormInputBackground: '#474747',
+  contactFormInputText: '#fff',
+  contactFormButtonBackground: '#007bff',
+  contactFormButtonBackgroundHover: '#0056b3',
+  contactFormButtonText: '#fff',
+
+  contactInfoText: '#fff',
 }
