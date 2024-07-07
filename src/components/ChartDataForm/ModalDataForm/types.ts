@@ -25,7 +25,15 @@ export interface Field {
   c: string
 }
 
+export interface FieldError {
+  o: boolean
+  h: boolean
+  l: boolean
+  c: boolean
+}
+
 export type State = {
   date: string
   fields: Field[]
+  errors: FieldError[]
 }

@@ -51,10 +51,12 @@ export const ButtonContainer = styled.div`
   }
 `
 
-export const NumberInput = styled.input`
+export const NumberInput = styled.input<{ $hasError?: boolean }>`
   padding: 0.5vw;
   border-radius: 4px;
-  border: 1px solid ${({ theme }) => theme.modalDataFormNumberInputBorder};
+  border: 1px solid
+    ${({ theme, $hasError }) =>
+      $hasError ? 'red' : theme.modalDataFormNumberInputBorder};
   width: calc(100% / 4 - 0.4vw);
   margin-right: 0.5vw;
   background-color: ${({ theme }) => theme.modalDataFormNumberInputBackground};

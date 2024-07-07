@@ -20,6 +20,7 @@ class ModalDataFormClass extends Component<Props, State> {
     this.state = {
       date: '',
       fields: [],
+      errors: [],
     }
   }
 
@@ -36,17 +37,39 @@ class ModalDataFormClass extends Component<Props, State> {
   addField = () => {
     this.setState((prevState) => ({
       fields: [...prevState.fields, { o: '', h: '', l: '', c: '' }],
+      errors: [...prevState.errors, { o: false, h: false, l: false, c: false }],
     }))
   }
 
   removeField = (index: number) => {
     this.setState((prevState) => ({
       fields: prevState.fields.filter((_, i) => i !== index),
+      errors: prevState.errors.filter((_, i) => i !== index),
     }))
+  }
+
+  validateFields = () => {
+    const errors = this.state.fields.map((field) => {
+      const o = parseFloat(field.o)
+      const h = parseFloat(field.h)
+      const l = parseFloat(field.l)
+      const c = parseFloat(field.c)
+      return {
+        o: false,
+        h: h < Math.max(o, l, c),
+        l: l > Math.min(o, h, c),
+        c: false,
+      }
+    })
+    this.setState({ errors })
+    return !errors.some((error) =>
+      Object.values(error).some((isError) => isError)
+    )
   }
 
   handleSubmit = (e: FormEvent) => {
     e.preventDefault()
+    if (!this.validateFields()) return
     const { date, fields } = this.state
     const { setUserChartData, onClose } = this.props
     const groupedData = fields.map(
@@ -105,6 +128,7 @@ class ModalDataFormClass extends Component<Props, State> {
               <NumberInput
                 type="number"
                 value={field.h}
+                $hasError={this.state.errors[index]?.h}
                 onChange={(e) =>
                   this.handleFieldChange(index, 'h', e.target.value)
                 }
@@ -114,6 +138,7 @@ class ModalDataFormClass extends Component<Props, State> {
               <NumberInput
                 type="number"
                 value={field.l}
+                $hasError={this.state.errors[index]?.l}
                 onChange={(e) =>
                   this.handleFieldChange(index, 'l', e.target.value)
                 }
