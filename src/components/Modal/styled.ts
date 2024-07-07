@@ -19,6 +19,8 @@ export const ModalContent = styled.div`
   background: ${({ theme }) => theme.modalBackground};
   width: 35vw;
   height: auto;
+  overflow: auto;
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
