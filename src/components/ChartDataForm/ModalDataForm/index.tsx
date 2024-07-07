@@ -1,4 +1,5 @@
 import { ChangeEvent, Component, FormEvent } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 import {
   AddButton,
@@ -28,23 +29,30 @@ class ModalDataFormClass extends Component<Props, State> {
     this.setState({ date: e.target.value })
   }
 
-  handleFieldChange = (index: number, key: keyof Field, value: string) => {
-    const newFields = [...this.state.fields]
-    newFields[index][key] = value
+  handleFieldChange = (id: string, key: keyof Field, value: string) => {
+    const newFields = this.state.fields.map((field) =>
+      field.id === id ? { ...field, [key]: value } : field
+    )
     this.setState({ fields: newFields })
   }
 
   addField = () => {
     this.setState((prevState) => ({
-      fields: [...prevState.fields, { o: '', h: '', l: '', c: '' }],
-      errors: [...prevState.errors, { o: false, h: false, l: false, c: false }],
+      fields: [
+        ...prevState.fields,
+        { id: uuidv4(), o: '', h: '', l: '', c: '' },
+      ],
+      errors: [
+        ...prevState.errors,
+        { id: uuidv4(), o: false, h: false, l: false, c: false },
+      ],
     }))
   }
 
-  removeField = (index: number) => {
+  removeField = (id: string) => {
     this.setState((prevState) => ({
-      fields: prevState.fields.filter((_, i) => i !== index),
-      errors: prevState.errors.filter((_, i) => i !== index),
+      fields: prevState.fields.filter((field) => field.id !== id),
+      errors: prevState.errors.filter((error) => error.id !== id),
     }))
   }
 
@@ -55,6 +63,7 @@ class ModalDataFormClass extends Component<Props, State> {
       const l = parseFloat(field.l)
       const c = parseFloat(field.c)
       return {
+        id: field.id,
         o: false,
         h: h < Math.max(o, l, c),
         l: l > Math.min(o, h, c),
@@ -114,13 +123,13 @@ class ModalDataFormClass extends Component<Props, State> {
             onChange={this.handleDateChange}
             required
           />
-          {this.state.fields.map((field, index) => (
-            <FieldContainer key={index}>
+          {this.state.fields.map((field) => (
+            <FieldContainer key={field.id}>
               <NumberInput
                 type="number"
                 value={field.o}
                 onChange={(e) =>
-                  this.handleFieldChange(index, 'o', e.target.value)
+                  this.handleFieldChange(field.id, 'o', e.target.value)
                 }
                 placeholder="Open"
                 required
@@ -128,9 +137,11 @@ class ModalDataFormClass extends Component<Props, State> {
               <NumberInput
                 type="number"
                 value={field.h}
-                $hasError={this.state.errors[index]?.h}
+                $hasError={
+                  this.state.errors.find((error) => error.id === field.id)?.h
+                }
                 onChange={(e) =>
-                  this.handleFieldChange(index, 'h', e.target.value)
+                  this.handleFieldChange(field.id, 'h', e.target.value)
                 }
                 placeholder="Hightest"
                 required
@@ -138,9 +149,11 @@ class ModalDataFormClass extends Component<Props, State> {
               <NumberInput
                 type="number"
                 value={field.l}
-                $hasError={this.state.errors[index]?.l}
+                $hasError={
+                  this.state.errors.find((error) => error.id === field.id)?.l
+                }
                 onChange={(e) =>
-                  this.handleFieldChange(index, 'l', e.target.value)
+                  this.handleFieldChange(field.id, 'l', e.target.value)
                 }
                 placeholder="Lowest"
                 required
@@ -149,12 +162,12 @@ class ModalDataFormClass extends Component<Props, State> {
                 type="number"
                 value={field.c}
                 onChange={(e) =>
-                  this.handleFieldChange(index, 'c', e.target.value)
+                  this.handleFieldChange(field.id, 'c', e.target.value)
                 }
                 placeholder="Close"
                 required
               />
-              <RemoveButton onClick={() => this.removeField(index)}>
+              <RemoveButton onClick={() => this.removeField(field.id)}>
                 -
               </RemoveButton>
             </FieldContainer>

@@ -13,12 +13,14 @@ const mapDispatchToProps = {
   clearChartData,
 }
 
+export const connector = connect(mapStateToProps, mapDispatchToProps)
+
 export interface Props extends ConnectedProps<typeof connector> {
   onClose: () => void
 }
 
-export const connector = connect(mapStateToProps, mapDispatchToProps)
 export interface Field {
+  id: string
   o: string
   h: string
   l: string
@@ -26,6 +28,7 @@ export interface Field {
 }
 
 export interface FieldError {
+  id: string
   o: boolean
   h: boolean
   l: boolean
