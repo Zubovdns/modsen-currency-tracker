@@ -122,7 +122,7 @@ class ModalDataFormClass extends Component<Props, State> {
                 onChange={(e) =>
                   this.handleFieldChange(index, 'o', e.target.value)
                 }
-                placeholder="O"
+                placeholder="Open"
                 required
               />
               <NumberInput
@@ -132,7 +132,7 @@ class ModalDataFormClass extends Component<Props, State> {
                 onChange={(e) =>
                   this.handleFieldChange(index, 'h', e.target.value)
                 }
-                placeholder="H"
+                placeholder="Hightest"
                 required
               />
               <NumberInput
@@ -142,7 +142,7 @@ class ModalDataFormClass extends Component<Props, State> {
                 onChange={(e) =>
                   this.handleFieldChange(index, 'l', e.target.value)
                 }
-                placeholder="L"
+                placeholder="Lowest"
                 required
               />
               <NumberInput
@@ -151,7 +151,7 @@ class ModalDataFormClass extends Component<Props, State> {
                 onChange={(e) =>
                   this.handleFieldChange(index, 'c', e.target.value)
                 }
-                placeholder="C"
+                placeholder="Close"
                 required
               />
               <RemoveButton onClick={() => this.removeField(index)}>
