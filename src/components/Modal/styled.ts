@@ -27,8 +27,13 @@ export const ModalContent = styled.div`
   position: relative;
   border: 1px solid ${({ theme }) => theme.modalBorderColor};
 
+  @media ${device.lg} {
+    width: 70vw;
+    padding: 3vw;
+  }
+
   @media ${device.md} {
-    width: 75vw;
+    width: 80vw;
     padding: 4vw;
   }
 `

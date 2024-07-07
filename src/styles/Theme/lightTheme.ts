@@ -46,4 +46,28 @@ export const lightTheme = {
   chartTicksColor: '#000',
   chartGridColor: '#1C1C1D',
   chartTitleColor: '#000',
+
+  chartDataFormButtonBackground: '#5ad539',
+  chartDataFormButtonBackgroundHover: '#4caf50',
+  chartDataFormButtonTextColor: '#FFF',
+
+  modalDataFormDateInputBorder: '#474747',
+  modalDataFormDateInputBackground: '#1c1c1d',
+  modalDataFormDateInputText: '#fff',
+  modalDataFormNumberInputBorder: '#474747',
+  modalDataFormNumberInputBackground: '#1c1c1d',
+  modalDataFormNumberInputText: '#fff',
+  modalDataFormRemoveButtonBackground: '#e74c3c',
+  modalDataFormRemoveButtonText: '#fff',
+  modalDataFormAddButtonBackground: '#474747',
+  modalDataFormAddButtonText: '#fff',
+  modalDataFormSubmitButtonBackground: '#4caf50',
+  modalDataFormSubmitButtonText: '#fff',
+  modalDataFormRandomDataButtonBackground: '#474747',
+  modalDataFormRandomDataButtonText: '#fff',
+  modalDataFormClearDataButtonBackground: '#474747',
+  modalDataFormClearDataButtonText: '#fff',
+
+  notificationBackground: '#333',
+  notificationText: 'wheat',
 }

@@ -1,3 +1,4 @@
+import { device } from '@constants/breakpoints'
 import styled, { keyframes } from 'styled-components'
 
 const fadeIn = keyframes`
@@ -27,7 +28,7 @@ export const NotificationContainer = styled.div<{ $isFadeOut: boolean }>`
   top: 90%;
   left: 1%;
   transform: translateY(-50%);
-  background-color: #333;
+  background-color: ${({ theme }) => theme.notificationBackground};
   padding: 1vw;
   border-radius: 4px;
   animation: ${({ $isFadeOut }) => ($isFadeOut ? fadeOut : fadeIn)} 0.5s
@@ -36,9 +37,25 @@ export const NotificationContainer = styled.div<{ $isFadeOut: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media ${device.lg} {
+    padding: 1.5vw;
+  }
+
+  @media ${device.md} {
+    padding: 3vw;
+  }
 `
 
 export const NotificationMessage = styled.p`
-  color: wheat;
+  color: ${({ theme }) => theme.notificationText};
   font-size: 1vw;
+
+  @media ${device.lg} {
+    font-size: 1.5vw;
+  }
+
+  @media ${device.md} {
+    font-size: 3vw;
+  }
 `
