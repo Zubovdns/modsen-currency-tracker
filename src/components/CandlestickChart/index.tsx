@@ -1,4 +1,5 @@
 import { Component, createRef } from 'react'
+import { chartObserver } from '@components/Observable/initialization'
 import { Chart, registerables } from 'chart.js'
 import { withTheme } from 'styled-components'
 
@@ -17,8 +18,12 @@ class CandlestickChartClass extends Component<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    if (prevProps.theme !== this.props.theme) {
+    if (
+      prevProps.theme !== this.props.theme ||
+      prevProps.data !== this.props.data
+    ) {
       this.updateChart()
+      chartObserver.notify(true)
     }
   }
 
@@ -26,7 +31,7 @@ class CandlestickChartClass extends Component<Props, State> {
     this.destroyChart()
   }
 
-  initChart() {
+  initChart = () => {
     Chart.register(...registerables)
 
     if (this.chartRef.current) {
@@ -37,12 +42,12 @@ class CandlestickChartClass extends Component<Props, State> {
     }
   }
 
-  updateChart() {
+  updateChart = () => {
     this.destroyChart()
     this.initChart()
   }
 
-  destroyChart() {
+  destroyChart = () => {
     if (this.chartInstance) {
       this.chartInstance.destroy()
       this.chartInstance = undefined

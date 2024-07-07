@@ -7,9 +7,9 @@ import {
   useState,
 } from 'react'
 import closeModalIcon from '@assets/icons/closeModalIcon.svg'
+import { createContainer, Portal } from '@components/Portal'
 
 import { MODAL_CONTAINER_ID } from './constants'
-import { createContainer, Portal } from './Portal'
 import {
   ModalCloseButton,
   ModalCloseButtonIcon,
@@ -36,6 +36,7 @@ const Modal: FC<ModalProps> = ({ onClose, children }) => {
         onClose?.()
       }
     }
+
     const handleEscapePress = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         onClose?.()

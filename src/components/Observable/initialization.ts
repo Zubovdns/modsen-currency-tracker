@@ -1,5 +1,3 @@
-import { TimelinePoint } from '@interfaces/timeline'
-
 import { Observable } from '.'
 
-export const timelineObserver = new Observable<TimelinePoint[]>()
+export const chartObserver = new Observable<boolean>()
