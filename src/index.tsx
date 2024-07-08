@@ -13,6 +13,8 @@ import { lightTheme } from '@styles/Theme/lightTheme'
 import { PersistGate } from 'redux-persist/integration/react'
 import { ThemeProvider } from 'styled-components'
 
+import 'mapbox-gl/dist/mapbox-gl.css'
+
 const MainComponent = () => {
   const theme = useAppSelector(themeMode)
 
