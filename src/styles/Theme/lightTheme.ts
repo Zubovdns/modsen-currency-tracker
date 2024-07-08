@@ -78,4 +78,9 @@ export const lightTheme = {
   contactFormButtonText: '#fff',
 
   contactInfoText: '#000',
+
+  searchInputBackground: '#1b2028',
+  searchInputText: '#d9d9d9',
+  searchListBackground: '#1b2028',
+  searchListText: '#d9d9d9',
 }

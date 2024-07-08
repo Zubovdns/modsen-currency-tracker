@@ -79,4 +79,9 @@ export const darkTheme = {
   contactFormButtonText: '#fff',
 
   contactInfoText: '#fff',
+
+  searchInputBackground: '#1b2028',
+  searchInputText: '#d9d9d9',
+  searchListBackground: '#1b2028',
+  searchListText: '#d9d9d9',
 }
