@@ -59,6 +59,11 @@ module.exports = {
           filename: path.join('icons', '[name].[ext]'),
         },
       },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   plugins: [
