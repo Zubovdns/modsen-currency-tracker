@@ -19,7 +19,8 @@ export const ModalContent = styled.div`
   background: ${({ theme }) => theme.modalBackground};
   width: 35vw;
   height: auto;
-  overflow: auto;
+  overflow-y: auto; /* Применяет прокрутку только по оси Y */
+  overflow-x: hidden; /* Отключает прокрутку по оси X */
   max-height: 90vh;
   display: flex;
   flex-direction: column;

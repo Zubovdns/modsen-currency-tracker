@@ -24,7 +24,10 @@ export const CurrencyItem: React.FC<CurrencyData> = ({ code, value }) => {
   }
 
   return (
-    <CurrencyItemContainer onClick={handleModalOpen}>
+    <CurrencyItemContainer
+      onClick={handleModalOpen}
+      data-testid="currency-item"
+    >
       <CurrencyItemIcon src={currencyImages[code]} />
       <CurrencyItemContentContainer>
         <CurrencyItemName>{currencyNames[code]}</CurrencyItemName>

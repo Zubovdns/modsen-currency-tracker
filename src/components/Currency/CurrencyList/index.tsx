@@ -13,7 +13,9 @@ export const CurrencyList: React.FC<CurrencyListItemProps> = ({
 }) => (
   <CurrencyListContainer>
     <CurrencyListTitleBox>
-      <CurrencyListTitle>{title}</CurrencyListTitle>
+      <CurrencyListTitle data-testid="currency-title">
+        {title}
+      </CurrencyListTitle>
     </CurrencyListTitleBox>
     {data &&
       Object.values(data).map((curr) => (

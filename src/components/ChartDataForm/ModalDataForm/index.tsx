@@ -124,7 +124,7 @@ class ModalDataFormClass extends Component<Props, State> {
             required
           />
           {this.state.fields.map((field) => (
-            <FieldContainer key={field.id}>
+            <FieldContainer key={field.id} data-testid="field-container">
               <NumberInput
                 type="number"
                 value={field.o}
@@ -132,6 +132,7 @@ class ModalDataFormClass extends Component<Props, State> {
                   this.handleFieldChange(field.id, 'o', e.target.value)
                 }
                 placeholder="Open"
+                data-testid="number-input-o"
                 required
               />
               <NumberInput
@@ -144,6 +145,7 @@ class ModalDataFormClass extends Component<Props, State> {
                   this.handleFieldChange(field.id, 'h', e.target.value)
                 }
                 placeholder="Hightest"
+                data-testid="number-input-h"
                 required
               />
               <NumberInput
@@ -156,6 +158,7 @@ class ModalDataFormClass extends Component<Props, State> {
                   this.handleFieldChange(field.id, 'l', e.target.value)
                 }
                 placeholder="Lowest"
+                data-testid="number-input-l"
                 required
               />
               <NumberInput
@@ -165,23 +168,39 @@ class ModalDataFormClass extends Component<Props, State> {
                   this.handleFieldChange(field.id, 'c', e.target.value)
                 }
                 placeholder="Close"
+                data-testid="number-input-c"
                 required
               />
-              <RemoveButton onClick={() => this.removeField(field.id)}>
+              <RemoveButton
+                onClick={() => this.removeField(field.id)}
+                data-testid="remove-button"
+              >
                 -
               </RemoveButton>
             </FieldContainer>
           ))}
-          <AddButton type="button" onClick={this.addField}>
+          <AddButton
+            type="button"
+            onClick={this.addField}
+            data-testid="add-button"
+          >
             +
           </AddButton>
           <SubmitButton type="submit">Submit</SubmitButton>
         </form>
         <ButtonContainer>
-          <RandomDataButton onClick={this.handleRandom}>
+          <RandomDataButton
+            onClick={this.handleRandom}
+            data-testid="random-data-button"
+          >
             Random
           </RandomDataButton>
-          <ClearDataButton onClick={this.handleClear}>Clear</ClearDataButton>
+          <ClearDataButton
+            onClick={this.handleClear}
+            data-testid="clear-data-button"
+          >
+            Clear
+          </ClearDataButton>
         </ButtonContainer>
       </FormContainer>
     )

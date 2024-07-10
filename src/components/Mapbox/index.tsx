@@ -89,7 +89,7 @@ export const Mapbox = class Mapbox extends Component<Props, State> {
   render() {
     return (
       <MapContainer>
-        <Map ref={this.mapRef} />
+        <Map ref={this.mapRef} data-testid="bank-map" />
       </MapContainer>
     )
   }

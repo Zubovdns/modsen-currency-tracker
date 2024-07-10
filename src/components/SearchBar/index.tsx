@@ -44,7 +44,7 @@ export const SearchBar = class SearchBar extends Component<Props, State> {
     const { query, filteredSuggestions, showSuggestions } = this.state
 
     return (
-      <SearchContainer>
+      <SearchContainer data-testid="bank-search">
         <SearchInput
           type="text"
           placeholder="Currency search..."

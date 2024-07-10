@@ -65,7 +65,10 @@ const Modal: FC<ModalProps> = ({ onClose, children }) => {
     <Portal id={MODAL_CONTAINER_ID}>
       <ModalWrap ref={rootRef}>
         <ModalContent>
-          <ModalCloseButton onClick={handleClose}>
+          <ModalCloseButton
+            onClick={handleClose}
+            data-testid="currency-modal-close"
+          >
             <ModalCloseButtonIcon src={closeModalIcon} />
           </ModalCloseButton>
           {children}
