@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import diagramLogo from '@assets/icons/diagramLogo.svg'
 
 import {
@@ -18,18 +17,18 @@ import {
   FooterTitleImage,
 } from './styled'
 
-export const Footer: FC = () => (
-    <FooterContainer>
-      <FooterMainContainer>
-        <FooterTextContainer>
-          <FooterTitleContainer>
-            <FooterTitleImage src={diagramLogo} />
-            <FooterTitle>{FOOTER_TITLE}</FooterTitle>
-          </FooterTitleContainer>
-          <FooterSubText>{FOOTER_DESCRIPTION}</FooterSubText>
-        </FooterTextContainer>
-        <LinksSection />
-      </FooterMainContainer>
-      <FooterCreditsText>{FOOTER_DISCLAIMER}</FooterCreditsText>
-    </FooterContainer>
-  )
+export const Footer = () => (
+  <FooterContainer>
+    <FooterMainContainer>
+      <FooterTextContainer>
+        <FooterTitleContainer>
+          <FooterTitleImage src={diagramLogo} />
+          <FooterTitle>{FOOTER_TITLE}</FooterTitle>
+        </FooterTitleContainer>
+        <FooterSubText>{FOOTER_DESCRIPTION}</FooterSubText>
+      </FooterTextContainer>
+      <LinksSection />
+    </FooterMainContainer>
+    <FooterCreditsText>{FOOTER_DISCLAIMER}</FooterCreditsText>
+  </FooterContainer>
+)

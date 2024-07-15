@@ -1,12 +1,12 @@
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import { DARK, LIGHT } from '@constants/theme'
 import { useAppDispatch, useAppSelector } from '@store/hooks/hooks'
 import { themeMode } from '@store/selectors/themeSelectors'
 import { setTheme } from '@store/slices/themeSlice'
 
-import { ToggleSwitch,TSInput, TSLabel } from './styled'
+import { ToggleSwitch, TSInput, TSLabel } from './styled'
 
-export const ThemeSwitcher: FC = () => {
+export const ThemeSwitcher = () => {
   const theme = useAppSelector(themeMode)
   const dispatch = useAppDispatch()
 

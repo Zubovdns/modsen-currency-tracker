@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '@store/hooks/hooks'
 import { currencies } from '@store/selectors/currenciesSelectors'
 import { fetchCurrencies } from '@store/thunks/fetchCurrencies'
@@ -18,7 +18,7 @@ import {
 } from './styled'
 import { ModalItemProps } from './types'
 
-export const CurrencyModalItem: FC<ModalItemProps> = ({ code }) => {
+export const CurrencyModalItem = ({ code }: ModalItemProps) => {
   const [selectedCurrency, setSelectedCurrency] = useState<string>(mainCurrency)
   const data = useAppSelector(currencies(code))
   const dispatch = useAppDispatch()

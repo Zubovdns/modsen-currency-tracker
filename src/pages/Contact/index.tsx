@@ -1,9 +1,8 @@
-import { FC } from 'react'
 import { ContactForm } from '@components/ContactForm'
 import { ContactInfo } from '@components/ContactInfo'
 import { ErrorBoundary } from '@components/ErrorBoundary'
 
-const Contact: FC = () => (
+const Contact = () => (
   <ErrorBoundary>
     <ContactInfo />
     <ContactForm />

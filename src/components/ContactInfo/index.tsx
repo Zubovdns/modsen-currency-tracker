@@ -6,7 +6,7 @@ import {
 } from './constants'
 import { InfoContainer, InfoText, InfoTitle } from './styled'
 
-export const ContactInfo: React.FC = () => (
+export const ContactInfo = () => (
   <InfoContainer>
     <InfoTitle>{CONTACT_TITLE}</InfoTitle>
     <InfoText>{CONTACT_PHONE_NUMBER}</InfoText>

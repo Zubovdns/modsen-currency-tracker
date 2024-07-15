@@ -1,5 +1,4 @@
 import {
-  FC,
   MouseEventHandler,
   useCallback,
   useEffect,
@@ -18,7 +17,7 @@ import {
 } from './styled'
 import { ModalProps } from './types'
 
-const Modal: FC<ModalProps> = ({ onClose, children }) => {
+const Modal = ({ onClose, children }: ModalProps) => {
   const [isMounted, setMounted] = useState(false)
 
   const rootRef = useRef<HTMLDivElement>(null)

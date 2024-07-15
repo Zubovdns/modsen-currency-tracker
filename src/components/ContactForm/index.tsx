@@ -8,7 +8,7 @@ import {
 } from './constants'
 import { Button, Form, Input, TextArea } from './styled'
 
-export const ContactForm: React.FC = () => {
+export const ContactForm = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')

@@ -7,10 +7,7 @@ import {
   CurrencyListTitleBox,
 } from './styled'
 
-export const CurrencyList: React.FC<CurrencyListItemProps> = ({
-  title,
-  data,
-}) => (
+export const CurrencyList = ({ title, data }: CurrencyListItemProps) => (
   <CurrencyListContainer>
     <CurrencyListTitleBox>
       <CurrencyListTitle data-testid="currency-title">

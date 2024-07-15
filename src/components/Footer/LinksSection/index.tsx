@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import linksArrow from '@assets/icons/linksArrow.svg'
 import { useWindowSize } from '@hooks/useWindowSize'
 
@@ -20,7 +19,7 @@ import {
   FooterMobileLinksListItem,
 } from './styled'
 
-export const LinksSection: FC = () => {
+export const LinksSection = () => {
   const isMobile = useWindowSize()
   return (
     <>

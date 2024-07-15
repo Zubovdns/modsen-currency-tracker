@@ -13,7 +13,7 @@ import {
   CurrencyItemValue,
 } from './styled'
 
-export const CurrencyItem: React.FC<CurrencyData> = ({ code, value }) => {
+export const CurrencyItem = ({ code, value }: CurrencyData) => {
   const [isModalActive, setModalActive] = useState(false)
 
   const handleModalOpen = () => {
