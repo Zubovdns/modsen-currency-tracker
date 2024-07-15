@@ -53,9 +53,9 @@ export const SearchBar = class SearchBar extends Component<Props, State> {
         />
         {showSuggestions && (
           <SuggestionsList>
-            {filteredSuggestions.map((suggestion, index) => (
+            {filteredSuggestions.map((suggestion) => (
               <SuggestionItem
-                key={index}
+                key={suggestion}
                 onClick={() => this.handleSuggestionClick(suggestion)}
               >
                 {suggestion}
