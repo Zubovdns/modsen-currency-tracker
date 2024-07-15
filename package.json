@@ -15,7 +15,7 @@
     "deploy": "gh-pages -d build",
     "postdeploy": "rm -rf build"
   },
-  "homepage": "https://Zubovdns.github.io/modsen-currency-tracker",
+  "homepage": "https://Zubovdns.github.io/modsen-currency-tracker/",
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
