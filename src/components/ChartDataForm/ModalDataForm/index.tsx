@@ -1,6 +1,5 @@
 import { ChangeEvent, Component, FormEvent } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-
 import {
   AddButton,
   ButtonContainer,
@@ -62,17 +61,21 @@ class ModalDataFormClass extends Component<Props, State> {
       const h = parseFloat(field.h)
       const l = parseFloat(field.l)
       const c = parseFloat(field.c)
+
       return {
         id: field.id,
         o: false,
-        h: h < Math.max(o, l, c),
-        l: l > Math.min(o, h, c),
+        h: h <= Math.max(o, l, c),
+        l: l >= Math.min(o, h, c),
         c: false,
       }
     })
+
     this.setState({ errors })
     return !errors.some((error) =>
-      Object.values(error).some((isError) => isError)
+      Object.keys(error)
+        .filter((key) => key !== 'id')
+        .some((key) => error[key])
     )
   }
 
@@ -144,7 +147,7 @@ class ModalDataFormClass extends Component<Props, State> {
                 onChange={(e) =>
                   this.handleFieldChange(field.id, 'h', e.target.value)
                 }
-                placeholder="Hightest"
+                placeholder="Highest"
                 data-testid="number-input-h"
                 required
               />
