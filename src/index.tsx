@@ -14,6 +14,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { ThemeProvider } from 'styled-components'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
+import { ErrorBoundary } from '@components/ErrorBoundary'
 
 const MainComponent = () => {
   const theme = useAppSelector(themeMode)
@@ -29,11 +30,13 @@ const MainComponent = () => {
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <MainComponent />
-        </PersistGate>
-      </Provider>
+      <ErrorBoundary>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <MainComponent />
+          </PersistGate>
+        </Provider>
+      </ErrorBoundary>
     </BrowserRouter>
   </React.StrictMode>
 )
