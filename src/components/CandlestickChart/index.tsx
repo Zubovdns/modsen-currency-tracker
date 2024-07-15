@@ -1,5 +1,5 @@
 import { Component, createRef } from 'react'
-import { chartObserver } from '@components/Observable/initialization'
+import { chartObserver } from '@utils/Observable/initialization'
 import { Chart, registerables } from 'chart.js'
 import { withTheme } from 'styled-components'
 

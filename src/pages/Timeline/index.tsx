@@ -3,7 +3,7 @@ import { CandlestickChart } from '@components/CandlestickChart'
 import { ChartDataForm } from '@components/ChartDataForm'
 import { ErrorBoundary } from '@components/ErrorBoundary'
 import { Notification } from '@components/Notification'
-import { chartObserver } from '@components/Observable/initialization'
+import { chartObserver } from '@utils/Observable/initialization'
 
 import { SUCCESS_MESSAGE } from './constants'
 import { Props, State } from './types'
