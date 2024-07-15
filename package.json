@@ -12,7 +12,8 @@
     "test:jest": "jest",
     "test:cypress": "cypress open",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "postdeploy": "rm -rf build"
   },
   "homepage": "https://Zubovdns.github.io/modsen-currency-tracker",
   "devDependencies": {
