@@ -17,7 +17,7 @@ import {
 } from './styled'
 import { ModalProps } from './types'
 
-const Modal = ({ onClose, children }: ModalProps) => {
+export const Modal = ({ onClose, children }: ModalProps) => {
   const [isMounted, setMounted] = useState(false)
 
   const rootRef = useRef<HTMLDivElement>(null)
@@ -76,5 +76,3 @@ const Modal = ({ onClose, children }: ModalProps) => {
     </Portal>
   )
 }
-
-export default Modal

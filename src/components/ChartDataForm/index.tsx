@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Modal from '@components/Modal'
+import { Modal } from '@components/Modal'
 
 import { ModalDataForm } from './ModalDataForm'
 import { Button, Container } from './styled'
